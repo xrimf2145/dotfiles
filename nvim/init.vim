@@ -62,7 +62,7 @@ nnoremap <silent> <C-k> :bnext<CR>
 
 " template
 let g:sonictemplate_vim_template_dir = [
-      \ '~/.config/template/'
+      \ '~/.config/nvim/template'
       \]
 
 " LaTeX
