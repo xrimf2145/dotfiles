@@ -1,0 +1,73 @@
+\documentclass[13pt, slashbox, titlepage, a4paper]{jsarticle}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{here}
+%\usepackage[labelformat=empty, labelsep=none]{caption}
+\usepackage[top=30truemm, bottom=30truemm, left=25truemm, right=25truemm]{geometry}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{jlisting}
+\usepackage{comment}
+%\usepackage{amsmath, amssymb}
+%\usepackage{emathT}
+\usepackage{setspace}
+
+\renewcommand{\lstlistingname}{C}
+\lstset{%
+  language={C++},
+  basicstyle={\ttfamily\footnotesize},%
+  identifierstyle={\ttfamily\footnotesize},%
+  commentstyle={\ttfamily\footnotesize},%
+  keywordstyle={\ttfamily\footnotesize},%
+  ndkeywordstyle={\ttfamily\footnotesize},%
+  stringstyle={\ttfamily\footnotesize},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},%
+  numbers=left,%
+  xrightmargin=0zw,%
+  xleftmargin=3zw,%
+  numberstyle={\scriptsize},%
+  stepnumber=1,
+  numbersep=1zw,%
+  lineskip=-0.5ex,%
+  showstringspaces=false
+}
+
+\title{title}
+
+\author{class, 2600170296-2,  中野 颯}
+
+\begin{document}
+
+\maketitle
+
+\setstretch{1.5}
+
+\end{document}
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[clip, width = 10cm]{img file}
+    \caption{caption}
+    \label{label}
+  \end{center}
+\end{figure}
+
+\lstinputlisting[caption =  , label = ]{prog file}
+
+\begin{figure}[htbp]
+ \begin{minipage}{0.5\hsize}
+  \begin{center}
+   \includegraphics[width=70mm]{fig1.eps}
+  \end{center}
+  \caption{一つめの図}
+  \label{fig:one}
+ \end{minipage}
+ \begin{minipage}{0.5\hsize}
+  \begin{center}
+   \includegraphics[width=70mm]{fig2.eps}
+  \end{center}
+  \caption{二つめの図}
+  \label{fig:two}
+ \end{minipage}
+\end{figure}
