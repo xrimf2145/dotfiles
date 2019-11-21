@@ -1,19 +1,19 @@
-\documentclass[13pt, slashbox, titlepage, a4paper]{jsarticle}
+\documentclass[a4paper]{jsarticle}
 \usepackage[dvipdfmx]{graphicx}
 \usepackage{here}
-%\usepackage[labelformat=empty, labelsep=none]{caption}
 \usepackage[top=30truemm, bottom=30truemm, left=25truemm, right=25truemm]{geometry}
 \usepackage{url}
 \usepackage{listings}
 \usepackage{jlisting}
 \usepackage{comment}
-%\usepackage{amsmath, amssymb}
-%\usepackage{emathT}
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{setspace}
+\usepackage{cases}
 
 \renewcommand{\lstlistingname}{C}
 \lstset{%
-  language={C++},
+  language={C},
   basicstyle={\ttfamily\footnotesize},%
   identifierstyle={\ttfamily\footnotesize},%
   commentstyle={\ttfamily\footnotesize},%
@@ -33,41 +33,25 @@
   showstringspaces=false
 }
 
-\title{title}
+\title{}
 
-\author{class, 2600170296-2,  中野 颯}
+\author{クラス:\\ 学籍番号:2600170296-2\\ 氏名:中野 颯}
 
 \begin{document}
 
 \maketitle
 
-\setstretch{1.5}
-
 \end{document}
 
-\begin{figure}[H]
-  \begin{center}
-    \includegraphics[clip, width = 10cm]{img file}
-    \caption{caption}
-    \label{label}
-  \end{center}
-\end{figure}
+\begin{equation}
+  \begin{split}
+    x = 5 \\
+    y = 2
+  \end{split}
+\end{equation}
 
-\lstinputlisting[caption =  , label = ]{prog file}
-
-\begin{figure}[htbp]
- \begin{minipage}{0.5\hsize}
-  \begin{center}
-   \includegraphics[width=70mm]{fig1.eps}
-  \end{center}
-  \caption{一つめの図}
-  \label{fig:one}
- \end{minipage}
- \begin{minipage}{0.5\hsize}
-  \begin{center}
-   \includegraphics[width=70mm]{fig2.eps}
-  \end{center}
-  \caption{二つめの図}
-  \label{fig:two}
- \end{minipage}
-\end{figure}
+\begin{numcases}
+  {}
+  x = 1 & \\
+  y = 2 &
+\end{numcases}

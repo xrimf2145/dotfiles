@@ -1,0 +1,70 @@
+\documentclass[submit,techreq,noauthor]{eco}
+\usepackage[dvips]{graphicx}
+\usepackage{listings, jlisting}
+\usepackage{url}
+\usepackage{setspace}
+\usepackage{comment}
+\usepackage{here}
+\usepackage{ascmac}
+%\setstretch{1.5}
+
+\renewcommand{\lstlistingname}{図}
+
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex
+}
+
+\begin{document}
+
+\semino {25/2}					% 年度/回数
+\date   {25/10/11/金}				% 平成/月/日/曜日
+\title  {}
+\author {中野 颯}
+
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+\section{はじめに}
+
+\begin{thebibliography}{99}
+\bibitem{}
+\end{thebibliography}
+
+\end{figure}
+
+図の参照は，\verb|\ret{\ref{sample}}|と記述する．
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=8cm]{fig/}
+    \caption{OpenOfficeで作成した図}
+    \label{sample}
+\end{figure}
+
+begin{figure*}[t]
+    \centering
+		\begin{lstlisting}
+		\end{lstlisting}
+    \caption{}
+		\label{src:code}
+\end{figure*}
+
+
+参考文献の書き方
+参照方法は，\verb|\ret{\cite{qualnet}}|と記述すると自動で番号を割りあててくれる．
