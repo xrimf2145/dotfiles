@@ -9,3 +9,5 @@ nnoremap っy yy
 nnoremap ： :
 nnoremap ｗ w
 nnoremap ｑ q
+
+nnoremap nt :NERDTreeToggle<CR>

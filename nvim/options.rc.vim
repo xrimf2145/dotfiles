@@ -1,4 +1,5 @@
 set number
+set relativenumber
 set cursorline
 set virtualedit=onemore
 set smartindent
@@ -9,6 +10,8 @@ nnoremap j gj
 nnoremap k gk
 syntax enable
 set clipboard=unnamed
+
+set scrolloff=2
 
 set fenc=utf-8
 set nobackup
