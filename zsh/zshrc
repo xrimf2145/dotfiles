@@ -36,9 +36,6 @@ alias ..='cd ../'
 alias vim='nvim'
 alias open='xdg-open'
 alias gdb='gdb -q'
-alias peda='gdb-peda -q'
-alias gef='gdb-gef -q'
-alias pbg='gdb-pwndbg -q'
 alias q='exit'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
