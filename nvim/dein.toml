@@ -65,9 +65,6 @@ repo = 'vim-scripts/Align'
 repo = 'junegunn/fzf.vim'
 
 [[plugins]]
-repo = 'sainnhe/edge'
-
-[[plugins]]
 repo = 'jonathanfilip/vim-lucius'
 
 [[plugins]]
