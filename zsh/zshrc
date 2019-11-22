@@ -11,7 +11,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 export TERM=xterm-color
-
+export FZF_DEFAULT_OPTS='--height 100% --border'
+synclient AreaLeftEdge=200 AreaRightEdge=980
+#
 # Customize to your needs...
 
 # global alias
@@ -22,8 +24,8 @@ alias -g GI='| grep -ri'
 alias -g F='| fzf'
 
 # alias
-alias la='ls -la --color=auto'
-alias ll='ls -l --color=auto'
+#alias la='ls -la --color=auto'
+#alias ll='ls -l --color=auto'
 alias so='source'
 alias vz='nvim ~/.zshrc'
 alias sz='source ~/.zshrc'
