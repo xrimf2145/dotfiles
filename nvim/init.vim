@@ -60,6 +60,11 @@ let g:dein#auto_recache = 1
 nnoremap <silent> <C-j> :bprev<CR>
 nnoremap <silent> <C-k> :bnext<CR>
 
+highlight Normal ctermbg=NONE guibg=NONE
+highlight NonText ctermbg=NONE guibg=NONE
+highlight SpecialKey ctermbg=NONE guibg=NONE
+highlight EndOfBuffer ctermbg=NONE guibg=NONE
+
 " template
 let g:sonictemplate_vim_template_dir = [
       \ '~/.config/nvim/template'
