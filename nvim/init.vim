@@ -48,7 +48,6 @@ endif
 
 filetype plugin indent on
 syntax enable
-" colorscheme edge
 colorscheme lucius
 
 runtime! ./options.rc.vim
@@ -64,6 +63,8 @@ highlight Normal ctermbg=NONE guibg=NONE
 highlight NonText ctermbg=NONE guibg=NONE
 highlight SpecialKey ctermbg=NONE guibg=NONE
 highlight EndOfBuffer ctermbg=NONE guibg=NONE
+
+set termguicolors
 
 " template
 let g:sonictemplate_vim_template_dir = [
