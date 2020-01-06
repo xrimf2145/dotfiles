@@ -8,22 +8,6 @@ on_i = 1
 hook_add = 'source ~/.config/nvim/plugins/deoplete.vim'
 
 [[plugins]]
-repo = 'poppyschmo/deoplete-latex'
-hook_add = 'source ~/.config/nvim/plugins/deoplete-latex.vim'
-
-[[plugins]]
-repo = 'Shougo/neosnippet.vim'
-
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
-repo  = 'Shougo/neco-vim'
-
-[[plugins]]
-repo = 'Shougo/neco-syntax'
-
-[[plugins]]
 repo = 'ujihisa/neco-look'
 
 [[plugins]]
@@ -62,25 +46,10 @@ repo = 'lervag/vimtex'
 repo = 'vim-scripts/Align'
 
 [[plugins]]
-repo = 'junegunn/fzf.vim'
-
-[[plugins]]
 repo = 'jonathanfilip/vim-lucius'
-
-[[plugins]]
-repo = 'dhruvasagar/vim-table-mode'
-
-[[plugins]]
-repo = 'reireias/vim-cheatsheet'
-
-[[plugins]]
-repo = 'simeji/winresizer'
-
-[[plugins]]
-repo = 'thinca/vim-quickrun'
 
 [[plugins]]
 repo = 'scrooloose/nerdTree'
 
 [[plugins]]
-repo = 'tpope/vim-surround'
+repo = 'smancill/conky-syntax.vim'

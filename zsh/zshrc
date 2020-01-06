@@ -1,34 +1,33 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+# zplugin
+source $HOME/.zplugin/bin/zplugin.zsh
+autoload -Uz _zplugin
+(( ${+_comps} )) && _comps[zplugin]=_zplugin
 
-# Source Prezto.
+zplugin ice wait'!0';zplugin load momo-lab/zsh-abbrev-alias
+zplugin ice wait'!0';zplugin load zsh-users/zsh-syntax-highlighting
+zplugin ice wait'!0'; zplugin load zsh-users/zsh-completions
+# zplugin
+
+# prezto
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
+# prezto
 
-export TERM=xterm-color
-export PROMPT_DIRTRIM=2
+#export TERM=xterm-color
+#export PROMPT_DIRTRIM=2
 
+# fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export FZF_DEFAULT_OPTS='--height 100% --reverse --border --color --layout=default'
-
-# Customize to your needs...
-
-# global alias
-alias -g L='| less'
-alias -g H='| head'
-alias -g G='| grep'
-alias -g GI='| grep -ri'
-alias -g F='| fzf'
+# fzf
 
 # alias
+alias ls='ls --color=auto'
 alias la='ls -la --color=auto'
 alias ll='ls -l --color=auto'
+alias l='ls -a --color=auto'
 alias so='source'
 alias vz='nvim ~/.zshrc'
 alias sz='source ~/.zshrc'
@@ -43,34 +42,34 @@ alias open='xdg-open'
 alias gdb='gdb -q'
 alias q='exit'
 
-# using fzf
+# global
+alias -g L='| less'
+alias -g H='| head'
+alias -g G='| grep'
+alias -g GI='| grep -ri'
+alias -g F='| fzf'
+# global
+
+# with fzf
 alias cdd='cd $(find ~/ -type d 2>/dev/null | fzf -m --preview "tree -C {}")'
 alias fvim='nvim $(find ~/ -type f 2>/dev/null | fzf -m --preview "bat -p --color=always {}")'
 alias fopen='open $(find ~ -type f 2>/dev/null | fzf -m --preview "file {}")'
-alias gvim=''
+# with fzf
+# alias
 
-function mkcd() {
-  if [[ -d $1 ]]; then
-    echo "$1 already exists!"
-    cd $1
-  else
-    mkdir -p $1 && cd $1
-  fi
-}
-
-prompt_end() {
-  if [[ -n $CURRENT_BG ]]; then
-      print -n "%{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
-  else
-      print -n "%{%k%}"
-  fi
-
-  print -n "%{%f%}"
-  CURRENT_BG='' 
-
+# prompt_end() {
+#  if [[ -n $CURRENT_BG ]]; then
+#     print -n "%{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
+#  else
+#      print -n "%{%k%}"
+#  fi
+#
+#  print -n "%{%f%}"
+#  CURRENT_BG='' 
+#
   #Adds the new line and ➜ as the start character.
-  printf "\n ➜";
-}
+#  printf "\n ➜";
+#}
 
 # powerline
 #function powerline_precmd() {
@@ -89,3 +88,4 @@ prompt_end() {
 #if [ "$TERM" != "linux" ]; then
 #    install_powerline_precmd
 #fi
+
