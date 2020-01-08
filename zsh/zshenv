@@ -10,8 +10,8 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-export FZF_DEFAULT_OPTS='--height 100% --border'
-synclient AreaLeftEdge=200 AreaRightEdge=980
+#export FZF_DEFAULT_OPTS='--height 100% --border'
+#synclient AreaLeftEdge=200 AreaRightEdge=980
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"

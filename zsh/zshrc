@@ -6,6 +6,8 @@ autoload -Uz _zplugin
 zplugin ice wait'!0';zplugin load momo-lab/zsh-abbrev-alias
 zplugin ice wait'!0';zplugin load zsh-users/zsh-syntax-highlighting
 zplugin ice wait'!0'; zplugin load zsh-users/zsh-completions
+zplugin ice wait'!0'; zplugin load zsh-users/zsh-autosuggestions
+zplugin ice wait'!0'; zplugin load  oknowton/zsh-dwim
 # zplugin
 
 # prezto
@@ -14,7 +16,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 # prezto
 
-#export TERM=xterm-color
+export TERM=xterm-color
 #export PROMPT_DIRTRIM=2
 
 # fzf

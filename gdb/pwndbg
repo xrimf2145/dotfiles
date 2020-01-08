@@ -1,1 +1,1 @@
-source ~/pwndbg-src/gdbinit.py
+source ~/src/pwndbg-src/gdbinit.py
