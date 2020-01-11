@@ -3,11 +3,30 @@ source $HOME/.zplugin/bin/zplugin.zsh
 autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 
-zplugin ice wait'!0';zplugin load momo-lab/zsh-abbrev-alias
-zplugin ice wait'!0';zplugin load zsh-users/zsh-syntax-highlighting
-zplugin ice wait'!0'; zplugin load zsh-users/zsh-completions
-zplugin ice wait'!0'; zplugin load zsh-users/zsh-autosuggestions
-zplugin ice wait'!0'; zplugin load  oknowton/zsh-dwim
+zplugin load zdharma/history-search-multi-word
+zplugin ice compile"*.lzui" from"notabug"
+zplugin load zdharma/zui
+zplugin ice from"gh-r" as"program"; zplugin load junegunn/fzf-bin
+zplugin ice from"gh-r" as"program" mv"docker* -> docker-compose" bpick"*linux*"; zplugin load docker/compose
+zplugin ice as"program" atclone"rm -f src/auto/config.cache; ./configure" atpull"%atclone" make pick"src/vim"
+zplugin light vim/vim
+zplugin ice as"program" pick"$ZPFX/bin/git-*" make"PREFIX=$ZPFX"
+zplugin light tj/git-extras
+zplugin snippet OMZ::plugins/git/git.plugin.zsh
+zplugin cdclear -q
+
+# essential's
+zplugin light zsh-users/zsh-autosuggestions
+zplugin light zsh-users/zsh-completions
+zplugin light zsh-users/zaw
+zplugin light zdharma/fast-syntax-highlighting
+zplugin light chrissicool/zsh-256color
+zplugin light  zsh-users/zsh-history-substring-search 
+
+# theme
+zplugin ice pick"async.zsh" src"pure.zsh"
+zplugin light sindresorhus/pure
+
 # zplugin
 
 # prezto
@@ -17,7 +36,6 @@ fi
 # prezto
 
 export TERM=xterm-color
-#export PROMPT_DIRTRIM=2
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -58,36 +76,3 @@ alias fvim='nvim $(find ~/ -type f 2>/dev/null | fzf -m --preview "bat -p --colo
 alias fopen='open $(find ~ -type f 2>/dev/null | fzf -m --preview "file {}")'
 # with fzf
 # alias
-
-# prompt_end() {
-#  if [[ -n $CURRENT_BG ]]; then
-#     print -n "%{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
-#  else
-#      print -n "%{%k%}"
-#  fi
-#
-#  print -n "%{%f%}"
-#  CURRENT_BG='' 
-#
-  #Adds the new line and ➜ as the start character.
-#  printf "\n ➜";
-#}
-
-# powerline
-#function powerline_precmd() {
-#    PS1="$(powerline-shell --shell zsh $?)"
-#}
-
-#function install_powerline_precmd() {
-#  for s in "${precmd_functions[@]}"; do
-#    if [ "$s" = "powerline_precmd" ]; then
-#      return
-#    fi
-#  done
-#  precmd_functions+=(powerline_precmd)
-#}
-#
-#if [ "$TERM" != "linux" ]; then
-#    install_powerline_precmd
-#fi
-
