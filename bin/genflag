@@ -1,0 +1,2 @@
+#!/bin/sh
+exec python3 ~/src/flag-generator/genflag.py $1

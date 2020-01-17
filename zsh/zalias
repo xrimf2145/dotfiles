@@ -1,0 +1,36 @@
+
+# alias
+alias ls='ls --color=auto'
+alias la='ls -la --color=auto'
+alias ll='ls -l --color=auto'
+alias l='ls -a --color=auto'
+alias so='source'
+alias vz='nvim ~/.zshrc'
+alias sz='source ~/.zshrc'
+alias vc='nvim ~/.config/regolith/i3/config'
+alias c='clear'
+alias cp='cp -i'
+alias rm='rm -i'
+alias mkdir='mkdir -p'
+alias ..='cd ../'
+alias vim='nvim'
+alias open='xdg-open'
+alias gdb='gdb -q'
+alias q='exit'
+alias pip-upgrade-all-2="pip2 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip2 install -U --user"
+alias pip-upgrade-all-3="pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip3 install -U --user"
+
+# global
+alias -g L='| less'
+alias -g H='| head'
+alias -g G='| grep'
+alias -g GI='| grep -ri'
+alias -g F='| fzf'
+# global
+
+# with fzf
+alias cdd='cd $(find ~/ -type d 2>/dev/null | fzf -m --preview "tree -C {}")'
+alias fvim='nvim $(find ~/ -type f 2>/dev/null | fzf -m --preview "bat -p --color=always {}")'
+alias fopen='open $(find ~ -type f 2>/dev/null | fzf -m --preview "file {}")'
+# with fzf
+# alias
