@@ -5,7 +5,7 @@ autoload -Uz _zplugin
 
 # prezto
 #if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-#  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+#	source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 #fi
 # prezto
 
@@ -13,6 +13,6 @@ export TERM=xterm-color
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source ~/.zsh_config/zplugin
-source ~/.zsh_config/zalias
-source ~/.zsh_config/zkeybind
+source ~/.zconfig/zplugin
+source ~/.zconfig/zalias
+source ~/.zconfig/zkeybind
