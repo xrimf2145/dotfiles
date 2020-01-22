@@ -11,7 +11,7 @@ alias c='clear'
 alias cp='cp -i'
 alias rm='rm -i'
 alias mkdir='mkdir -p'
-alias ..='cd ../'
+alias ..='cd ./../'
 alias vim='nvim'
 alias open='xdg-open'
 alias gdb='gdb -q'
@@ -28,8 +28,48 @@ alias -g F='| fzf'
 # global
 
 # with fzf
-alias cdd='cd $(find ~/ -type d 2>/dev/null | fzf -m --preview "tree -C {}")'
-alias fvim='nvim $(find ~/ -type f 2>/dev/null | fzf -m --preview "bat -p --color=always {}")'
-alias fopen='open $(find ~ -type f 2>/dev/null | fzf -m --preview "file {}")'
+
+function clever_change_directory() {
+	if [ -n "$1" ]; then
+		cd $(find "$1" -type d 2>/dev/null | fzf -m --preview "tree -C {}")
+	else
+		cd $(find ~/ -type d 2>/dev/null | fzf -m --preview "tree -C {}")
+	fi
+}
+zle -N clever_change_directory
+alias cdd='clever_change_directory'
+
+function exec_neovim_with_fzf() {
+	if [ -n "$1" ]; then
+		nvim $(find "$1" -type f 2>/dev/null | fzf -m --preview "bat -p --color=always {}")
+	else
+		nvim $(find ~/ -type f 2>/dev/null | fzf -m --preview "bat -p --color=always {}")
+	fi
+}
+zle -N exec_neovim_with_fzf
+alias fvim='exec_neovim_with_fzf'
+
+function open_file_with_fzf() {
+	if [ -n "$1" ]; then
+		open $(find "$1" -type f 2>/dev/null | fzf -m --preview "file {}")
+	else
+		open $(find ~/ -type f 2>/dev/null | fzf -m --preview "file {}")
+	fi
+}
+zle -N open_file_with_fzf
+alias fopen='open_file_with_fzf'
+
+function select-history() {
+  BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
+  CURSOR=$#BUFFER
+}
+zle -N select-history
+alias hs='select-history'
 # with fzf
+
+function shellcode_generator() {
+	objdump -M intel -d $1 | grep '^ ' | cut -f2 | perl -pe 's/(\w{2})\s+/\\x\1/g'
+}
+zle -N shellcode_generator
+alias shelgen='shellcode_generator'
 # alias

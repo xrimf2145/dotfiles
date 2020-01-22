@@ -7,10 +7,10 @@ let g:deoplete#enable_refresh_always = 1
 let g:deoplete#enable_smart_case = 1
 let g:deoplete#file#enable_buffer_path = 1
 let g:deoplete#max_list = 100
-if !exists('g:neocomplete#sources#omni#input_patterns')
-    let g:neocomplete#sources#omni#input_patterns = {}
-  endif
-  let g:neocomplete#sources#omni#input_patterns.tex = g:vimtex#re#neocomplete
-inoremap <expr><tab> pumvisible() ? "\<C-n>" :
-        \ neosnippet#expandable_or_jumpable() ?
-        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+"if !exists('g:neocomplete#sources#omni#input_patterns')
+"    let g:neocomplete#sources#omni#input_patterns = {}
+"  endif
+"  let g:neocomplete#sources#omni#input_patterns.tex = g:vimtex#re#neocomplete
+"inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+"        \ neosnippet#expandable_or_jumpable() ?
+"        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"

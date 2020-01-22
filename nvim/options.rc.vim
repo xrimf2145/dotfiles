@@ -30,3 +30,6 @@ set incsearch
 set wrapscan
 set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
+set nocompatible
+set wildmode=longest:full,full
