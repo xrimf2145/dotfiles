@@ -17,3 +17,4 @@ source ~/.zconfig/zplugin
 source ~/.zconfig/zalias
 source ~/.zconfig/zkeybind
 source ~/.zconfig/zoptions
+source ~/.zlocal
