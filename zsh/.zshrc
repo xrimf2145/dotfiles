@@ -16,10 +16,10 @@ export TERM=xterm-color
 export ZCONFIG=$HOME/.zconfig
 export FILENUM=$(ls -Ul $ZCONFIG | wc -l)
 
-source $ZCONFIG/zplugin
-source $ZCONFIG/zalias
-source $ZCONFIG/zkeybind
-source $ZCONFIG/zoptions
-source $ZCONFIG/zstyle
-source $HOME/.zlocal
+source $ZCONFIG/zplugin.zsh
+source $ZCONFIG/zalias.zsh
+source $ZCONFIG/zkeybind.zsh
+source $ZCONFIG/zoptions.zsh
+source $ZCONFIG/zstyle.zsh
+source $HOME/.zlocal.zsh
 

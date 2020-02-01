@@ -19,6 +19,17 @@ alias q='exit'
 alias pip-upgrade-all-2="pip2 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip2 install -U --user"
 alias pip-upgrade-all-3="pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip3 install -U --user"
 alias x='chmod +x'
+alias python='python3.8'
+alias tar-compress-tgz='tar -cvzf'
+alias tar-extract-tgz='tar -xvzf'
+alias tar-compress-gz='tar -zcvf'
+alias tar-extract-gz='tar -zxvf'
+alias tar-compress-bz2='tar -jcvf'
+alias tar-extract-bz2='tar -jxvf'
+alias tar-compress-xz='tar -Jcvf'
+alias tar-extract-xz='tar -Jxvf'
+alias tar-compress-tar='tar -cvf'
+alias tar-extract-tar='tar -xvf'
 
 # global
 alias -g L='| less'
