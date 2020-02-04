@@ -9,7 +9,6 @@ autoload -Uz _zinit
 #fi
 # prezto
 
-export TERM=xterm-color
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -22,4 +21,3 @@ source $ZCONFIG/zkeybind.zsh
 source $ZCONFIG/zoptions.zsh
 source $ZCONFIG/zstyle.zsh
 source $HOME/.zlocal.zsh
-

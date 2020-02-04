@@ -1,3 +1,1 @@
-let g:sonictemplate_vim_template_dir = [
-      \ '~/.config/template/'
-      \]
+let g:sonictemplate_vim_template_dir = '~/.config/template/'

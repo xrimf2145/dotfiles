@@ -3,6 +3,31 @@ repo = 'Shougo/denite.nvim'
 hook_add = 'source ~/.config/nvim/plugins/denite.vim'
 
 [[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_i = 1
+hook_add = 'source ~/.config/nvim/plugins/deoplete.vim'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+hook_add = 'source ~/.config/nvim/plugins/fzf.vim'
+
+[[plugins]]
+repo = 'ujihisa/neco-look'
+
+[[plugins]]
+repo = 'Townk/vim-autoclose'
+hook_add = 'source ~/.config/nvim/plugins/autoclose.vim'
+
+[[plugins]]
+repo = 'iamcco/markdown-preview.vim'
+
+[[plugins]]
+repo = 'lervag/vimtex'
+
+[[plugins]]
+repo = 'scrooloose/nerdTree'
+
+[[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = 'source ~/.config/nvim/plugins/airline.vim'
 
@@ -29,3 +54,6 @@ repo = 'jonathanfilip/vim-lucius'
 
 [[plugins]]
 repo = 'smancill/conky-syntax.vim'
+
+[[plugins]]
+repo = 'mattn/sonictemplate-vim'
