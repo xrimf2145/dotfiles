@@ -9,7 +9,6 @@ autoload -Uz _zinit
 #fi
 # prezto
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export ZCONFIG=$HOME/.zconfig

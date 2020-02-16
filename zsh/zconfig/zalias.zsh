@@ -16,8 +16,8 @@ alias vim='nvim'
 alias open='xdg-open'
 alias gdb='gdb -q'
 alias q='exit'
-alias pip-upgrade-all-2="pip2 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip2 install -U --user"
-alias pip-upgrade-all-3="pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip3 install -U --user"
+alias pip2-upgrade-all="pip2 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip2 install -U --user"
+alias pip3-upgrade-all="pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip3 install -U --user"
 alias x='chmod +x'
 alias python='python3.8'
 alias tar-compress-tgz='tar -cvzf'
@@ -71,12 +71,12 @@ function open_file_with_fzf() {
 zle -N open_file_with_fzf
 alias fopen='open_file_with_fzf'
 
-function select-history() {
-  BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
-  CURSOR=$#BUFFER
-}
-zle -N select-history
-alias sh='select-history'
+#function select-history() {
+#  BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
+#  CURSOR=$#BUFFER
+#}
+#zle -N select-history
+#alias sh='select-history'
 # with fzf
 
 function shellcode_generator() {
@@ -84,4 +84,16 @@ function shellcode_generator() {
 }
 zle -N shellcode_generator
 alias shellgen='shellcode_generator'
+
+function find_gadget_32() {
+	rp32 --file="$1" --rop=3 --unique
+}
+zle -N find_gadget_32
+alias rp-32='find_gadget_32'
+
+function find_gadget_64() {
+	rp64 --file="$1" --rop=3 --unique
+}
+zle -N find_gadget_64
+alias rp-64='find_gadget_64'
 # alias
