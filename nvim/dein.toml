@@ -4,7 +4,6 @@ hook_add = 'source ~/.config/nvim/plugins/denite.vim'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
-on_i = 1
 hook_add = 'source ~/.config/nvim/plugins/deoplete.vim'
 
 [[plugins]]

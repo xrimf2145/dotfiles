@@ -33,3 +33,5 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 set nocompatible
 set wildmode=longest:full,full
+
+set background=dark
