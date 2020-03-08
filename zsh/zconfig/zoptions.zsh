@@ -1,6 +1,7 @@
 export HISTFILE=~/.zhistory
 export HISTSIZE=1000
 export SAVEHIST=100000
+export TERM=xterm-color
 
 setopt auto_param_slash
 setopt mark_dirs

@@ -1,22 +1,13 @@
-# zplugin
 source $HOME/.zinit/bin/zinit.zsh
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-# prezto
-#if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-#	source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-#fi
-# prezto
+while read -d $'\0' file; do
+	source "${file}"
+done < <(find $ZCONFIG/ -mindepth 1 -maxdepth 1 -print0)
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+while read -d $'\0' file; do
+	source "${file}"
+done < <(find $ZCONFIG/zplugin/ -mindepth 1 -maxdepth 1 -print0)
 
-export ZCONFIG=$HOME/.zconfig
-export FILENUM=$(ls -Ul $ZCONFIG | wc -l)
-
-source $ZCONFIG/zplugin.zsh
-source $ZCONFIG/zalias.zsh
-source $ZCONFIG/zkeybind.zsh
-source $ZCONFIG/zoptions.zsh
-source $ZCONFIG/zstyle.zsh
-source $HOME/.zlocal.zsh
+[ -f $HOME/.zlocal.zsh ] && source $HOME/.zlocal.zsh

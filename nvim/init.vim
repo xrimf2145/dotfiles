@@ -43,7 +43,6 @@ if dein#check_install()
 endif
 
 filetype plugin indent on
-syntax enable
 colorscheme lucius
 
 runtime! ./options.rc.vim
@@ -52,6 +51,12 @@ runtime! ./functions.rc.vim
 
 let g:dein#auto_recache = 1
 
+" Restore cursor shape to beam on exit
+augroup restore_cursor_shape
+	autocmd!
+	au VimLeave * set guicursor=a:ver10-blinkoff0
+augroup END
+
 nnoremap <silent> <C-j> :bprev<CR>
 nnoremap <silent> <C-k> :bnext<CR>
 
@@ -59,9 +64,6 @@ highlight Normal ctermbg=NONE guibg=NONE
 highlight NonText ctermbg=NONE guibg=NONE
 highlight SpecialKey ctermbg=NONE guibg=NONE
 highlight EndOfBuffer ctermbg=NONE guibg=NONE
-
-set termguicolors
-"set pumblend=10
 
 " template
 let g:sonictemplate_vim_template_dir = [

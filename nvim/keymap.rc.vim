@@ -11,3 +11,6 @@ nnoremap ｗ w
 nnoremap ｑ q
 
 nnoremap nt :NERDTreeToggle<CR>
+
+nnoremap j gj
+nnoremap k gk

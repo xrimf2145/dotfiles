@@ -56,3 +56,4 @@ repo = 'smancill/conky-syntax.vim'
 
 [[plugins]]
 repo = 'mattn/sonictemplate-vim'
+hook_add = 'source ~/.config/nvim/plugins/sonictemplate.vim'
