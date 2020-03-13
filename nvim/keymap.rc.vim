@@ -1,16 +1,6 @@
-nnoremap あ a
-nnoremap い i
-nnoremap う u
-nnoremap お o
-nnoremap ． .
-nnoremap ， ,
-nnoremap っd dd
-nnoremap っy yy
-nnoremap ： :
-nnoremap ｗ w
-nnoremap ｑ q
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 nnoremap nt :NERDTreeToggle<CR>
 
-nnoremap j gj
-nnoremap k gk
+nnoremap <C-B> :VimtexCompile
+nnoremap <C-C> :VimtexClean

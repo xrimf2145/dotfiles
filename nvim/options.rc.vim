@@ -3,7 +3,7 @@ set background=dark
 set number
 set relativenumber
 set cursorline
-set virtualedit=all
+set virtualedit=onemore
 set smartindent
 set showmatch
 set matchtime=1
@@ -33,7 +33,6 @@ set smartcase
 set incsearch
 set wrapscan
 set hlsearch
-nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 set nocompatible
 

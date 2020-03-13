@@ -1,4 +1,4 @@
 autoload -Uz colors
 colors
-autoload -U compinit
+autoload -Uz compinit
 compinit
