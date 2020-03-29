@@ -19,6 +19,7 @@ alias gdb='gdb -q'
 alias q='exit'
 alias c='clear'
 alias x='chmod +x'
+alias path='echo $PATH'
 
 alias tar-compress-tgz='tar -cvzf'
 alias tar-extract-tgz='tar -xvzf'

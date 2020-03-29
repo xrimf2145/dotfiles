@@ -49,11 +49,18 @@ zle -N open_file_with_fzf
 alias fopen='open_file_with_fzf'
 
 function serch-history() {
-  BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
-  CURSOR=$#BUFFER
+#	BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
+#	CURSOR=$#BUFFER
+	exec $(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
 }
 zle -N serch-history
 alias serch-history='serch-history'
+
+function attach_gdb_from_pid() {
+	gdb -p $(ps -A | fzf | awk '{print $1}')
+}
+zle -N attach_gdb_from_pid
+alias fgdb='attach_gdb_from_pid'
 
 function shellcode_generator() {
 	objdump -M intel -d $1 | grep '^ ' | cut -f2 | perl -pe 's/(\w{2})\s+/\\x\1/g'
