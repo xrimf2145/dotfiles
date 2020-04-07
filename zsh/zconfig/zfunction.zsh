@@ -57,7 +57,15 @@ zle -N serch-history
 alias serch-history='serch-history'
 
 function attach_gdb_from_pid() {
-	gdb -p $(ps -A | fzf | awk '{print $1}')
+	while getopts e OPT
+	do
+		case $OPT in
+			e) gdb -q -ex init-peda -p $(ps -A | fzf | awk '{print $1}');;
+			*) peda -p $(ps -A | fzf | awk '{print $1}');;
+		esac
+	done
+	peda -p $(ps -A | fzf | awk '{print $1}')
+#	peda -p $(ps -A | fzf | awk '{print $1}')
 }
 zle -N attach_gdb_from_pid
 alias fgdb='attach_gdb_from_pid'

@@ -19,6 +19,7 @@ set scrolloff=2
 
 set fenc=utf-8
 set nobackup
+set nowritebackup
 set noswapfile
 set autoread
 set hidden
@@ -33,6 +34,10 @@ set smartcase
 set incsearch
 set wrapscan
 set hlsearch
+
+set shortmess+=c
+
+set signcolumn=yes
 
 set nocompatible
 
