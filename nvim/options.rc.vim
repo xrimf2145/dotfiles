@@ -34,11 +34,10 @@ set smartcase
 set incsearch
 set wrapscan
 set hlsearch
+set wrap
 
 set shortmess+=c
 
 set signcolumn=yes
 
 set nocompatible
-
-set background=dark
