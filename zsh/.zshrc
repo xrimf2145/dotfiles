@@ -11,3 +11,5 @@ for file in `\fd . $ZCONFIG/zplugin/ --type f`;do
 done
 
 [ -f $HOME/.zlocal.zsh ] && source $HOME/.zlocal.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

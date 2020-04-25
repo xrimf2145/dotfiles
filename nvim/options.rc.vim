@@ -8,7 +8,7 @@ set smartindent
 set showmatch
 set matchtime=1
 set laststatus=2
-set wildmode=list:longest
+set wildmode=list:full
 syntax enable
 set clipboard=unnamed
 
@@ -35,6 +35,8 @@ set incsearch
 set wrapscan
 set hlsearch
 set wrap
+set wildmenu
+set showbreak=↪
 
 set shortmess+=c
 

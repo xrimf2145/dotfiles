@@ -16,7 +16,7 @@ zinit load zdharma/history-search-multi-word
 #zinit ice compile"*.lzui" from"notabug"
 #zinit load zdharma/zui
 #zinit ice from"gh-r" as"program"
-zinit load junegunn/fzf-bin
+#zinit load junegunn/fzf-bin
 #zinit ice from"gh-r" as"program" mv"docker* -> docker-compose" bpick"*linux*"; zplugin load docker/compose
 #zinit ice as"program" atclone"rm -f src/auto/config.cache; ./configure" atpull"%atclone" make pick"src/vim"
 #zinit light vim/vim
