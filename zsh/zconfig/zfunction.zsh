@@ -70,6 +70,12 @@ function attach_gdb_from_pid() {
 zle -N attach_gdb_from_pid
 alias fgdb='attach_gdb_from_pid'
 
+function convert_png_to_eps() {
+	convert $1.png -background white -flatten -alpha off eps2:$1.eps
+}
+zle -N convert_png_to_eps
+alias eps='convert_png_to_eps'
+
 function shellcode_generator() {
 	objdump -M intel -d $1 | grep '^ ' | cut -f2 | perl -pe 's/(\w{2})\s+/\\x\1/g'
 }
