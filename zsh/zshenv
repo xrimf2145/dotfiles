@@ -15,3 +15,6 @@ fi
 		export GOPATH=$HOME/go
 		export PATH="$GOPATH/bin:$PATH"
 	fi
+
+export PATH="~/.gem/ruby/2.5.0/bin:$PATH"
+export PATH="~/virtualenvs/zeratool/bin:$PATH"

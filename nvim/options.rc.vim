@@ -12,8 +12,8 @@ set wildmode=list:full
 syntax enable
 set clipboard=unnamed
 
-set winblend=10
-set pumblend=10
+set winblend=30
+set pumblend=30
 
 set scrolloff=2
 
@@ -36,6 +36,7 @@ set wrapscan
 set hlsearch
 set wrap
 set wildmenu
+set wildoptions=pum
 set showbreak=↪
 
 set shortmess+=c

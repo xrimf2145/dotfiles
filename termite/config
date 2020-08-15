@@ -59,4 +59,4 @@ color7=   #ffffff
 color15=  #dedede
 
 # vim: et sw=2 syn=xdefaults
-background = rgba(63, 63, 63, 1.00)
+background = rgba(63, 63, 63, 0.85)
