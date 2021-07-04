@@ -1,7 +1,7 @@
 set background=dark
 
 set number
-set relativenumber
+"set relativenumber
 set cursorline
 set virtualedit=onemore
 set smartindent
@@ -25,7 +25,7 @@ set autoread
 set hidden
 set showcmd
 
-set list listchars=tab:\▸\-
+"set list listchars=tab:\▸\-
 set tabstop=2
 set shiftwidth=2
 

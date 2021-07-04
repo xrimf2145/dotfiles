@@ -2,24 +2,58 @@
 repo = 'Shougo/denite.nvim'
 hook_add = 'source ~/.config/nvim/plugins/denite.vim'
 
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_add = 'source ~/.config/nvim/plugins/deoplete.vim'
+# deoplete
+# ---
+#[[plugins]]
+#repo = 'Shougo/deoplete.nvim'
+#hook_add = 'source ~/.config/nvim/plugins/deoplete.vim'
+
+#[[plugins]] 
+#repo = 'roxma/nvim-yarp'
+
+#[[plugins]] 
+#repo = 'roxma/vim-hug-neovim-rpc'
+
+#[[plugins]] 
+#repo = 'deoplete-plugins/deoplete-lsp'
+
+#[[plugins]] 
+#repo = 'Shougo/deoplete-clangx'
+
+#[[plugins]] 
+#repo = 'deoplete-plugins/deoplete-asm'
+
+#[[plugins]] 
+#repo = 'deoplete-plugins/deoplete-jedi'
+
+#[[plugins]] 
+#repo = 'sebastianmarkow/deoplete-rust'
+#hook_add = 'source ~/.config/nvim/plugins/deoplete-rust.vim'
+
+#[[plugins]] 
+#repo = 'Shougo/neco-vim'
 
 #[[plugins]]
-#repo = 'neoclide/coc.nvim'
-#rev = 'release'
-#on_i = 1
-#merged = '0'
-#hook_source = 'call coil398#init#coc#hook_source()'
-#hook_add = 'source ~/.config/nvim/plugins/coc.vim'
+#repo = 'Shougo/neco-syntax'
+
+#[[plugins]]
+#repo = 'ujihisa/neco-look'
+# ---
+
+# coc
+# ---
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+
+
+# ---
+
+[[plugins]]
+repo = 'rafi/awesome-vim-colorschemes'
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 hook_add = 'source ~/.config/nvim/plugins/fzf.vim'
-
-[[plugins]]
-repo = 'ujihisa/neco-look'
 
 [[plugins]]
 repo = 'Townk/vim-autoclose'
@@ -31,10 +65,6 @@ repo = 'iamcco/markdown-preview.vim'
 [[plugins]]
 repo = 'lervag/vimtex'
 hook_add = 'source ~/.config/nvim/plugins/vimtex.vim'
-
-#[[plugins]]
-#repo = 'vim-latex/vim-latex'
-hook_add = 'source ~/.config/nvim/plugins/vim-latex.vim'
 
 [[plugins]]
 repo = 'scrooloose/nerdTree'
@@ -86,3 +116,15 @@ repo = 'ozelentok/denite-gtags'
 [[plugins]]
 repo = 'ARM9/arm-syntax-vim'
 hook_add = 'source ~/.config/nvim/plugins/arm-syntax.vim'
+
+[[plugins]]
+repo = 'segeljakt/vim-silicon'
+hook_add = 'source ~/.config/nvim/plugins/silicon.vim'
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+hook_add = 'source ~/.config/nvim/plugins/rust.vim'
+on_ft = ['rust']
+
+[[plugins]]
+repo = 'prettier/vim-prettier'

@@ -6,8 +6,8 @@ let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
 let g:airline#extention#tabline#buffer_idx_mode = 1
 
-let g:airline_theme = 'solarized'
-let g:airline_solarized_bg='dark'
+let g:airline_theme = 'angr'
+" let g:airline_solarized_bg='dark'
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif

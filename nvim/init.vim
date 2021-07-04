@@ -43,7 +43,7 @@ if dein#check_install()
 endif
 
 filetype plugin indent on
-colorscheme lucius
+colorscheme angr
 
 runtime! ./options.rc.vim
 runtime! ./keymap.rc.vim
