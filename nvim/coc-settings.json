@@ -24,5 +24,8 @@
 			}
 		}
 	},
-	"python.jediEnabled": false
+	"python.jediEnabled": false,
+	"coc.preferences.formatOnSaveFiletypes": [
+		"rust"
+	]
 }

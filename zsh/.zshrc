@@ -13,6 +13,3 @@ done
 [ -f $HOME/.zlocal.zsh ] && source $HOME/.zlocal.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-source /usr/local/bin/virtualenvwrapper.sh
-export WORKON_HOME=~/.virtualenvs

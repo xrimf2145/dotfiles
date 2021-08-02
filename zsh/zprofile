@@ -65,4 +65,3 @@ fi
 export PATH=$PATH:$HOME/.cargo/bin
 export DOTFILE=$(ghq root)/github.com/xrimf2145/dotfiles
 export ZCONFIG=$HOME/.zconfig
-export FILENUM=$(ls -Ul $ZCONFIG | wc -l)
