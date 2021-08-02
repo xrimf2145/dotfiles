@@ -2,11 +2,11 @@ source $HOME/.zinit/bin/zinit.zsh
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-for file in `fd . $ZCONFIG/ --type file`; do
+for file in `fd . ~/.zconfig/ --type file`; do
 	source $file
 done
 
-for file in `fd . $ZCONFIG/zplugin/ --type f`;do
+for file in `fd . ~/.zconfig/zplugin/ --type file`; do
 	source $file
 done
 

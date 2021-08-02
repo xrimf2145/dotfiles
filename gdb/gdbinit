@@ -1,20 +1,31 @@
-define init-peda
-source ~/src/peda/peda.py
+set history save on
+set history size 10000
+set history filename ~/.gdb_history
+set print pretty on
+set print static-members off
+set charset ASCII
+
+define init-gef
+source ~/ghq/github.com/hugsy/gef/gef.py
 end
-document init-peda
-Initializes the PEDA (Python Exploit Development Assistant for GDB) framework
+
+define init-peda
+source ~/ghq/github.com/longld/peda/peda.py
 end
 
 define init-pwndbg
-source ~/.gdbinit_pwndbg
-end
-document init-pwndbg
-Initializes PwnDBG
+source ~/ghq/github.com/pwndbg/pwndbg/gdbinit.py
 end
 
-define init-gef
-source ~/.gdbinit-gef.py
+define init-pwngdb
+source ~/ghq/github.com/longld/peda/peda.py
+source ~/ghq/github.com/scwuaptx/Pwngdb/pwngdb.py
+source ~/ghq/github.com/scwuaptx/Pwngdb/angelheap/gdbinit.py
+
+define hook-run
+python
+import angelheap
+angelheap.init_angelheap()
 end
-document init-gef
-Initializes GEF (GDB Enhanced Features)
+end
 end
