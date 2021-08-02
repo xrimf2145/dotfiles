@@ -61,7 +61,3 @@ fi
 if (( $#commands[(i)lesspipe(|.sh)] )); then
 	export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
-
-export PATH=$PATH:$HOME/.cargo/bin
-export DOTFILE=$(ghq root)/github.com/xrimf2145/dotfiles
-export ZCONFIG=$HOME/.zconfig

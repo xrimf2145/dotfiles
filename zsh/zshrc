@@ -1,3 +1,6 @@
+export DOTFILE=$(ghq root)/github.com/xrimf2145/dotfiles
+export ZCONFIG=$HOME/.zconfig
+
 source $HOME/.zinit/bin/zinit.zsh
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
