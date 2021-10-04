@@ -7,7 +7,7 @@ alias lt='ls --tree'
 
 alias ..='cd ./../'
 
-alias cp='cp -i'
+alias cp='cp -i -p'
 alias rm='rm -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
