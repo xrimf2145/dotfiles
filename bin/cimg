@@ -1,3 +1,10 @@
 #!/bin/bash
 
-find . -print0 | cpio -o --format=newc --null --owner=root > ../rootfs.cpio
+set -e
+set -x
+
+INPUT="${1}"
+OUTPUT="${2}"
+
+cd "${INPUT}"
+find . -print0 | cpio -o --format=newc --null --owner=root > "${OUTPUT}.cpio"

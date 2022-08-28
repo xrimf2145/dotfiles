@@ -17,6 +17,7 @@ fi
 	fi
 
 export PATH="$HOME/.bin:$PATH"
+export PATH="/usr/local/musl/bin:$PATH"
 export PATH="~/.gem/ruby/2.5.0/bin:$PATH"
 export PATH="~/virtualenvs/zeratool/bin:$PATH"
 source "$HOME/.cargo/env"
