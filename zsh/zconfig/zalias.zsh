@@ -37,3 +37,7 @@ alias -g H='| head'
 alias -g G='| ag'
 alias -g F='| fzf'
 alias -g C='| xsel --clipboard --input'
+
+alias pip-review='pip freeze --local | grep -v "^\-e" | cut -d = -f 1  | xargs -n1 pip install -U'
+alias pip2-review='pip2 freeze --local | grep -v "^\-e" | cut -d = -f 1  | xargs -n1 pip2 install -U'
+alias pip3-review='pip3 freeze --local | grep -v "^\-e" | cut -d = -f 1  | xargs -n1 pip3 install -U'
