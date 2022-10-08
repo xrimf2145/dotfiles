@@ -2,13 +2,19 @@
 
 install sheldon
 
-```bash
+```zsh
 $ cargo install sheldon
 ```
 
 run setup script
 
-```bash
+```zsh
 $ ./setup
+```
+
+install zsh plugins with sheldon
+
+```zsh
+$ sheldon -v lock
 ```
 

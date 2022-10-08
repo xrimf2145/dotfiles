@@ -1,3 +1,2 @@
 eval "$(sheldon source)"
 
-#source $ZCONFIG/*.zsh
