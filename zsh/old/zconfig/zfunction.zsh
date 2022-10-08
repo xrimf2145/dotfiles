@@ -1,18 +1,18 @@
 function clever_change_directory() {
-	if [ -n "${1}" ]; then
-		cd $(fd -LH . -t d "${1}" 2>/dev/null | fzf -m --preview "tree -C {}")
+	if [ -n "$1" ]; then
+		cd $(fd -LH . -t d $1 2>/dev/null | fzf -m --preview "tree -C {}")
 	else
-		cd $(fd -LH . -t d --exclude .cache "${HOME}" 2>/dev/null | fzf -m --preview "tree -C {}")
+		cd $(fd -LH . -t d --exclude .cache $HOME/ 2>/dev/null | fzf -m --preview "tree -C {}")
 	fi
 }
 zle -N clever_change_directory
 alias cdd='clever_change_directory'
 
 function exec_neovim_with_fzf() {
-	if [ -n "${1}" ]; then
-		nvim $(fd -LH . -t f --exclude '*.o' --exclude '*.bin' --exclude '*.d' ${1} 2>/dev/null | fzf -m --preview "bat -p --color=always {}")
+	if [ -n "$1" ]; then
+		nvim $(fd -LH . -t f --exclude '*.o' --exclude '*.bin' --exclude '*.d' $1 2>/dev/null | fzf -m --preview "bat -p --color=always {}")
 	else
-		nvim $(fd -LH . -t f --exclude '*.o' --exclude '*.bin' --exclude '*.d' "$(pwd)" 2>/dev/null | fzf -m --preview "bat -p --color=always {}")
+		nvim $(fd -LH . -t f --exclude '*.o' --exclude '*.bin' --exclude '*.d' $(pwd)/ 2>/dev/null | fzf -m --preview "bat -p --color=always {}")
 	fi
 }
 zle -N exec_neovim_with_fzf

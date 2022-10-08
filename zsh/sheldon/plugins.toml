@@ -1,0 +1,57 @@
+# `sheldon` configuration file
+# ----------------------------
+#
+# You can modify this file directly or you can use one of the following
+# `sheldon` commands which are provided to assist in editing the config file:
+#
+# - `sheldon add` to add a new plugin to the config file
+# - `sheldon edit` to open up the config file in the default editor
+# - `sheldon remove` to remove a plugin from the config file
+#
+# See the documentation for more https://github.com/rossmacarthur/sheldon#readme
+
+shell = "zsh"
+
+[plugins]
+
+# For example:
+#
+# [plugins.base16]
+# github = "chriskempson/base16-shell"
+
+[plugins.pure]
+github = "sindresorhus/pure"
+use = ["async.zsh", "pure.zsh"]
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+use = ["{{ name }}.zsh"]
+
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+
+[plugins.zaw]
+github = "zsh-users/zaw"
+
+[plugins.zsh-256color]
+github = "chrissicool/zsh-256color"
+
+[plugins.zsh-history-substring-search]
+github = "zsh-users/zsh-history-substring-search"
+
+[plugins.fast-syntax-highlighting]
+github = "zdharma/fast-syntax-highlighting"
+
+[plugins.history-search-multi-word]
+github = "zdharma/history-search-multi-word"
+
+[plugins.dotfiles-sync]
+local = "~/.zconfig"
+use = ["*.zsh"]
+apply = ["source"]
+
+[plugins.plugins-config]
+local = "~/.zconfig/zplugin"
+use = ["*.zsh"]
+apply = ["source"]
+
