@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -x
+set -e
+
 if [[ -d "${HOME}/.config/regolith2" ]];then
 	mkdir "${HOME}/.config/regolith2"
 fi
