@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ln -s "${PWD}/gdbinit" "${HOME}/.gdbinit"
+

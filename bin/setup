@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ -d "${HOME}/.local/bin" ]];then
+	mkdir "${HOME}/.local/bin"
+fi
+
+ln -s "${PWD}/bin" "${HOME}/.local/bin"
+

@@ -89,13 +89,13 @@ zle -N shellcode_generator
 alias shellgen='shellcode_generator'
 
 function cd_git_repository() {
-	cd $(ghq root)/$(ghq list | fzf -m --preview "mdv $(ghq root)/{}/README.md")
+	cd $(ghq root)/$(ghq list | fzf -m --preview "bat $(ghq root)/{}/README.md")
 }
 zle -N cd_git_repository
 alias ghcd='cd_git_repository'
 
 function update_git_repository() {
-	ghq get --update $(ghq list | fzf -m --preview "mdv $(ghq root)/{}/README.md")
+	ghq get --update $(ghq list | fzf -m --preview "bat $(ghq root)/{}/README.md")
 }
 zle -N update_git_repository
 alias ghpull='update_git_repository'

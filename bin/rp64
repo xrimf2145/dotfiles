@@ -1,2 +1,0 @@
-#!/bin/sh
-exec ~/src/rp/rp-lin-x64 --file="$@" --unique --rop=3
