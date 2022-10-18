@@ -13,6 +13,10 @@ fi
 files=($(fd . "${TOOLS_DIR}" --type file))
 for file in "${files[@]}"; do
 	file="$(basename ${file})"
+	if [[ -e "${HOME}/.local/bin/${file}" ]];then
+		echo "${HOME}/.local/bin/${file} is already exist."
+		continue
+	fi
   ln -s "${TOOLS_DIR}/${file}" "${HOME}/.local/bin/${file}"
 done
 
