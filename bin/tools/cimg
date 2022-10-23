@@ -3,8 +3,18 @@
 set -e
 set -x
 
+if [[ "${#}" != 2 ]]; then
+  echo 'a number of argument is not much'
+  exit 1
+fi
+
 INPUT="${1}"
 OUTPUT="${2}"
 
-cd "${INPUT}"
-find . -print0 | cpio -o --format=newc --null --owner=root > "${OUTPUT}.cpio"
+if [[ ! -d "${OUTPUT}" ]]; then
+  mkdir -p "${OUTPUT}"
+fi
+
+cd "${OUTPUT}"
+cpio -idv < "../${INPUT}"
+
