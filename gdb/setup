@@ -1,7 +1,6 @@
 #!/bin/bash
 
-set -x
 set -e
 
-ln -s "${PWD}/gdbinit" "${HOME}/.gdbinit"
+ln -ivs "${PWD}/gdbinit" "${HOME}/.gdbinit"
 

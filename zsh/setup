@@ -7,14 +7,14 @@ PWD=$(pwd)
 
 function link_config() {
 	CONFIG_FILE="${1}"
-	ln -s "${PWD}/${CONFIG_FILE}" "${HOME}/.${CONFIG_FILE}"
+	ln -ivs "${PWD}/${CONFIG_FILE}" "${HOME}/.${CONFIG_FILE}"
 }
 
 if ! type sheldon > /dev/null 2>&1 ; then
 	echo "sheldon is required"
 	exit 1
 else
-	ln -s "${PWD}/sheldon" "${HOME}/.config/sheldon"
+	ln -ivs "${PWD}/sheldon" "${HOME}/.config/sheldon"
 fi
 
 link_config zshrc

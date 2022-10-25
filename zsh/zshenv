@@ -1,2 +1,4 @@
 PATH=$PATH:$HOME/.local/bin
+PATH=$PATH:/usr/local/musl/bin
+
 . "$HOME/.cargo/env"

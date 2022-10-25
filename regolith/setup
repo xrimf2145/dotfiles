@@ -1,12 +1,11 @@
 #!/bin/bash
 
-set -x
 set -e
 
 if [[ -d "${HOME}/.config/regolith2" ]];then
 	mkdir "${HOME}/.config/regolith2"
 fi
 
-cp -pvr /etc/regolith/i3/config "${HOME}/.config/regolith2/config"
-ln -s "${PWD}/Xresources" "${HOME}/.config/regolith2/Xresources"
+cp -ipvr /etc/regolith/i3/config "${HOME}/.config/regolith2/config"
+ln -ivs "${PWD}/Xresources" "${HOME}/.config/regolith2/Xresources"
 

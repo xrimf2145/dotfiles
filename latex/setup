@@ -1,13 +1,12 @@
 #!/bin/bash
 
-set -x
 set -e
 
 PWD="$(pwd)"
 
 function link_config() {
 	CONFIG_FILE="${1}"
-	ln -s "${PWD}/${CONFIG_FILE}" "${HOME}/.${CONFIG_FILE}"
+	ln -ivs "${PWD}/${CONFIG_FILE}" "${HOME}/.${CONFIG_FILE}"
 }
 
 link_config latexmkrc
