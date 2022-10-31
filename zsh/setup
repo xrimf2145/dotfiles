@@ -11,7 +11,7 @@ function link_config() {
 }
 
 if ! type sheldon > /dev/null 2>&1 ; then
-	echo "sheldon is required"
+	echo "sheldon is required but, not installed"
 	exit 1
 else
 	ln -ivs "${PWD}/sheldon" "${HOME}/.config/sheldon"
