@@ -8,7 +8,17 @@ if [[ "${?}" == 0 ]]; then
   sudo apt upgrade
 fi
 
+rustup self update
+rustup self upgrade-data
+
+rustup update
+rustup upgrade
+
 cargo install-update -a
 
 sheldon -v lock
+
+sudo gem update
+
+pip-review --verbose --auto --continue-on-fail --user
 
