@@ -15,10 +15,12 @@ source "${TARGET_CONF}"
 case "${#}" in
   '0' )
   ;;
+
   '1' )
     EXPLOIT="${1}"
     OUTPUT="$(basename ${EXPLOIT} .c)"
     CC_FLAG="-static"
+
     if [[ "${USE_DOCKER}" == 'yes' ]]; then
       CC='/usr/local/musl/bin/musl-gcc'
       CC_FLAG="${CC_FLAG} -o ${D_DIR}/${OUTPUT}"
@@ -28,18 +30,26 @@ case "${#}" in
       docker exec --interactive --tty "${D_CNTR}" \
         "${CC}" ${CC_FLAG} "${D_DIR}/${_EXPLOIT}"
       docker cp "${D_CNTR}:${D_DIR}/${OUTPUT}" "${ROOT}/${OUTPUT}"
-    else
+
+    elif [[ "${USE_DOCKER}" == 'no' ]]; then
       CC='musl-gcc'
       CC_FLAG="${CC_FLAG} -o ${ROOT}/${OUTPUT}"
 
       "${CC}" "${CC_FLAG}" "${EXPLOIT}"
+
+    else
+      help
+      exit 1
+
     fi
   ;;
+
   * )
     echo 'Number of arguments does not match'
     help
     exit 1
   ;;
+
 esac
 
 _PWD="${PWD}"
@@ -71,16 +81,21 @@ else
   KPTI='pti=off'
 fi
 
+if [[ "${PORT}" == '' ]]; then
+  # default
+  PORT='12345'
+fi
+
 qemu-system-x86_64 \
   -m 64M \
   -nographic \
-  -kernel  "${KERNEL}" \
+  -kernel "${KERNEL}" \
   -append "console=ttyS0 loglevel=3 oops=panic panic=-1 ${KPTI} ${KASLR}" \
   -no-reboot \
   -cpu kvm64,"${SMEP}","${SMAP}" \
-  -gdb tcp::12345 \
+  -gdb tcp::"${PORT}" \
   -smp 1 \
-  -monitor /dev/null \
+	-monitor /dev/null \
   -initrd "${INITRD}" \
   -net nic,model=virtio \
   -net user
