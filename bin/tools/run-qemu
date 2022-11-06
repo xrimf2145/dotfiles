@@ -1,0 +1,87 @@
+#!/bin/bash
+
+set -x
+set -v
+set -e
+
+function help() {
+	echo 'Usage run-qemu [EXLOIT_SCRIPT.c (option)]'
+}
+
+TARGET_CONF='target.conf'
+
+source "${TARGET_CONF}"
+
+case "${#}" in
+  '0' )
+  ;;
+  '1' )
+    EXPLOIT="${1}"
+    OUTPUT="$(basename ${EXPLOIT} .c)"
+    CC_FLAG="-static"
+    if [[ "${USE_DOCKER}" == 'yes' ]]; then
+      CC='/usr/local/musl/bin/musl-gcc'
+      CC_FLAG="${CC_FLAG} -o ${D_DIR}/${OUTPUT}"
+			_EXPLOIT="$(basename ${EXPLOIT})"
+
+      docker cp "${EXPLOIT}" "${D_CNTR}:${D_DIR}"
+      docker exec --interactive --tty "${D_CNTR}" \
+        "${CC}" ${CC_FLAG} "${D_DIR}/${_EXPLOIT}"
+      docker cp "${D_CNTR}:${D_DIR}/${OUTPUT}" "${ROOT}/${OUTPUT}"
+    else
+      CC='musl-gcc'
+      CC_FLAG="${CC_FLAG} -o ${ROOT}/${OUTPUT}"
+
+      "${CC}" "${CC_FLAG}" "${EXPLOIT}"
+    fi
+  ;;
+  * )
+    echo 'Number of arguments does not match'
+    help
+    exit 1
+  ;;
+esac
+
+_PWD="${PWD}"
+cd "${ROOT}"
+find . -print0 | cpio -o --null --format=newc --owner=root > "${_PWD}/${INITRD}"
+cd "${_PWD}"
+
+if [[ "${CONFIG_SMEP}" == 'yes' ]]; then
+  SMEP='+smep'
+else
+  SMEP='-smep'
+fi
+
+if [[ "${CONFIG_SMAP}" == 'yes' ]]; then
+  SMAP='+smap'
+else
+  SMAP='-smap'
+fi
+
+if [[ "${CONFIG_KASLR}" == 'yes' ]]; then
+  KASLR=''
+else
+  KASLR='nokaslr'
+fi
+
+if [[ "${CONFIG_KPTI}" == 'yes' ]]; then
+  KPTI='pti=on'
+else
+  KPTI='pti=off'
+fi
+
+qemu-system-x86_64 \
+  -m 64M \
+  -nographic \
+  -kernel  "${KERNEL}" \
+  -append "console=ttyS0 loglevel=3 oops=panic panic=-1 ${KPTI} ${KASLR}" \
+  -no-reboot \
+  -cpu kvm64,"${SMEP}","${SMAP}" \
+  -gdb tcp::12345 \
+  -smp 1 \
+  -monitor /dev/null \
+  -initrd "${INITRD}" \
+  -net nic,model=virtio \
+  -net user
+
