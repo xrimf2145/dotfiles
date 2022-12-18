@@ -4,9 +4,6 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	use 'neovim/nvim-lspconfig'
-	use "williambomanm/mason.nvim"
-	use "williambomanm/mason-lspconfig.nvim"
-
 
 	use 'Shougo/ddc.vim'
 
@@ -26,5 +23,7 @@ return require('packer').startup(function(use)
 	use 'mattn/sonictemplate-vim'
 
 	use 'rafi/awesome-vim-colorschemes'
+
+	use 'lervag/vimtex'
 
 end)
