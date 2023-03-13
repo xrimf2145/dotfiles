@@ -2,6 +2,6 @@ PATH=$PATH:$HOME/.local/bin
 PATH=$PATH:/usr/local/musl/bin
 
 . "$HOME/.cargo/env"
-PATH=$PATH:.cargo/bin/bin
+PATH=$PATH:$HOME/.cargo/bin/bin
 
 PATH=$PATH:$HOME/.nodebrew/current/bin
