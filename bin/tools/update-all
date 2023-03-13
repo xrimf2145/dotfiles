@@ -2,11 +2,8 @@
 
 set -x
 
-sudo apt update
-
-if [[ "${?}" == 0 ]]; then
-  sudo apt upgrade
-fi
+brew update
+brew upgrade
 
 rustup self update
 rustup self upgrade-data
