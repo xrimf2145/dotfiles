@@ -3,19 +3,19 @@ eval "$(sheldon source)"
 export DOTFILE=$(ghq root)/github.com/xrimf2145/dotfiles
 export ZCONFIG=$HOME/.zconfig
 
-source $HOME/.zinit/bin/zinit.zsh
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
+#source $HOME/.zinit/bin/zinit.zsh
+#autoload -Uz _zinit
+#(( ${+_comps} )) && _comps[zinit]=_zinit
 
 files=($(fd . "${ZCONFIG}" --type file))
 for file in "${files[@]}"; do
 	source "${file}"
 done
 
-plugin_config=($(fd . "${ZCONFIG}"/zplugin/ --type file))
-for file in "${plugin_config[@]}"; do
-	source "${file}"
-done
+#plugin_config=($(fd . "${ZCONFIG}"/zplugin/ --type file))
+#for file in "${plugin_config[@]}"; do
+#	source "${file}"
+#done
 
 [ -f $HOME/.zlocal.zsh ] && source $HOME/.zlocal.zsh
 

@@ -19,3 +19,5 @@ sudo gem update
 
 pip-review --verbose --auto --continue-on-fail --user
 
+deno upgrade
+
