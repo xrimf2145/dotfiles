@@ -2,6 +2,18 @@
 
 set -x
 
+function setup() {
+  target="${1}"
+  if [[ ! -d "${target}" ]]; then
+    echo "${target}: no such target"
+    return
+  fi
+
+  pushd "${target}"
+  ./setup
+  popd
+}
+
 if [[ "$(uname)" == 'Darwin' ]]; then
   OS='Mac'
 elif [[ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]]; then
@@ -15,17 +27,36 @@ else
   exit 1
 fi
 
-case "${OS}"; in
+if [[ ! -d "${HOME}/.cargo" ]]; then
+  echo "This script uses some utilities written by Rust"
+  read "install? (Y/n) " input
+  case "${input}" in
+    'Y' )
+      echo "thanks"
+      curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh 
+      break
+      ;;
+    'n' )
+      ;;
+    * )
+      exit 1
+      ;;
+  esac
+elif [[ "${PATH}" != "*${HOME}/.cargo/bin*" ]]; then
+  echo "not setuped for Rust"
+  source "$HOME/.cargo/env"
+fi
+
+case "${OS}" in
   'Linux' )
-    regolith/setup
+    setup regolith
     ;;
   'Mac' )
-    bin/setup
-    zsh/setup
-    gdb/setup
-    nvim/setup
-    latex/setup
-    break
+    setup bin
+    setup zsh
+    setup gdb
+    setup nvim
+    setup latex
     ;;
 esac
 

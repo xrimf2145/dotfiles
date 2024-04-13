@@ -1,4 +1,4 @@
-eval "$(sheldon source)"
+eval "$(sheldon --verbose source)"
 
 #export DOTFILE=$(ghq root)/github.com/xrimf2145/dotfiles
 #export ZCONFIG=$HOME/.zconfig

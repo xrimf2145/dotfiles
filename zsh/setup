@@ -3,7 +3,7 @@
 set -x
 set -e
 
-PWD=$(pwd)
+PWD="$(pwd)"
 
 function link_config() {
 	CONFIG_FILE="${1}"

@@ -2,9 +2,7 @@
 
 set -e
 
-if [[ -d "${HOME}/.config/regolith2" ]];then
-	mkdir "${HOME}/.config/regolith2"
-fi
+mkdir -pv "${HOME}/.config/regolith2"
 
 cp -ipvr /etc/regolith/i3/config "${HOME}/.config/regolith2/config"
 ln -ivs "${PWD}/Xresources" "${HOME}/.config/regolith2/Xresources"

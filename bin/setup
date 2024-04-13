@@ -1,18 +1,16 @@
 #!/bin/bash
 
+set -x
 set -e
 
 BIN_DIR="${HOME}/.local/bin"
 TOOLS_DIR="${PWD}/tools"
 
-if [[ ! -d "${BIN_DIR}" ]];then
-	mkdir "${BIN_DIR}"
-fi
+mkdir -pv "${BIN_DIR}"
 
 files=($(fd . "${TOOLS_DIR}" --type file))
 for file in "${files[@]}"; do
 	file="$(basename ${file})"
-  ln -ivs "${TOOLS_DIR}/${file}" "${HOME}/.local/bin/${file}"
-
+	ln -ivs "${TOOLS_DIR}/${file}" "${HOME}/.local/bin/${file}"
 done
 

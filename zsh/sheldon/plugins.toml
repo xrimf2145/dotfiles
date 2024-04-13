@@ -45,6 +45,11 @@ github = "zdharma/fast-syntax-highlighting"
 [plugins.history-search-multi-word]
 github = "zdharma/history-search-multi-word"
 
+[plugins.git-completion]
+local = "~/.zsh/completion"
+use = ["_git"]
+apply = ["source"]
+
 [plugins.dotfiles-sync]
 local = "~/.zconfig"
 use = ["*.zsh"]
