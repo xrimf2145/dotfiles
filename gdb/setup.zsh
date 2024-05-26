@@ -3,4 +3,3 @@
 set -e
 
 ln -ivs "${PWD}/gdbinit" "${HOME}/.gdbinit"
-
