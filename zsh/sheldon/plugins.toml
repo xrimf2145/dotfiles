@@ -46,9 +46,16 @@ github = "zdharma/fast-syntax-highlighting"
 github = "zdharma/history-search-multi-word"
 
 [plugins.git-completion]
-local = "~/.zsh/completion"
-use = ["_git"]
-apply = ["source"]
+remote = "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh"
+apply = ["fpath"]
+
+[plugins.kubectl-completion]
+remote = "https://raw.githubusercontent.com/nnao45/zsh-kubectl-completion/master/_kubectl"
+apply = ["fpath"]
+
+[plugins.docker-completion]
+remote = "https://raw.githubusercontent.com/docker/compose/1.29.2/contrib/completion/zsh/_docker-compose"
+apply = ["fpath"]
 
 [plugins.dotfiles-sync]
 local = "~/.zconfig"

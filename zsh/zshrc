@@ -1,5 +1,7 @@
 eval "$(sheldon --verbose source)"
 
+autoload -Uz compinit && compinit -i
+
 #export DOTFILE=$(ghq root)/github.com/xrimf2145/dotfiles
 #export ZCONFIG=$HOME/.zconfig
 
