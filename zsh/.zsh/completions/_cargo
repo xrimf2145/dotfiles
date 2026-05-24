@@ -1,0 +1,7 @@
+error: unrecognized subcommand 'zsh'
+
+  tip: a similar subcommand exists: 'show'
+
+Usage: rustup[EXE] [OPTIONS] [+toolchain] [COMMAND]
+
+For more information, try '--help'.

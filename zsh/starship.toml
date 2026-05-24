@@ -1,0 +1,55 @@
+# エディターの補完を設定スキーマに合わせて取得
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# シェルのプロンプトの間に空行を挿入する
+add_newline = true
+
+# ref https://github.com/starship/starship/discussions/1107?sort=top#discussioncomment-10214050
+# format = """
+# (bold green)$username$directory$battery$all$line_break$character"""
+format = """
+(bold green)$username$directory$all$line_break$character"""
+
+[character]
+success_symbol = '[❯](bold green)'
+error_symbol = '[❯](bold red)'
+
+[username]
+
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+
+[git_branch]
+# format = '[$symbol$branch(:$remote_branch) ]($style)'
+
+# ref https://zenn.dev/link/comments/ced6da507bf16f
+[git_status]
+# format = '$all_status$ahead_behind '
+# conflicted = ''
+# ahead = ''
+# behind = ''
+# diverged = ''
+# up_to_date = '[✓](bold green)'
+# untracked = ''
+# stashed = ''
+# modified = '🔥'
+# staged = ''
+# renamed = ''
+# deleted = ''
+
+[time]
+disabled = false
+# format = '🕙 [$time]($style) '
+# time_format = '%m/%d %R'
+
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[battery]
+# full_symbol = '🔋 '
+# charging_symbol = '⚡️ '
+# discharging_symbol = '💀 '
